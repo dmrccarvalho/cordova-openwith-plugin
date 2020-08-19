@@ -1,7 +1,8 @@
 var child_process = require('child_process');
+var q = require('q');
 
 module.exports = function (context) {
-    const Q = context.require("q");
+    const Q = context.q;
 	var deferral = Q.defer();
 
 	child_process.exec('npm install', {cwd:__dirname},
