@@ -108,7 +108,7 @@ function getCordovaParameter(configXml, variableName) {
 // }
 
 function parsePbxProject(context, pbxProjectPath) {
-  var xcode = context.requireCordovaModule('xcode');
+  var xcode = require('xcode');
   console.log('    Parsing existing project at location: ' + pbxProjectPath + '...');
   var pbxProject;
   if (context.opts.cordova.project) {
@@ -139,7 +139,7 @@ function projectPlistPath(context, projectName) {
 }
 
 function projectPlistJson(context, projectName) {
-  var plist = context.requireCordovaModule('plist');
+  var plist = require('plist');
   var path = projectPlistPath(context, projectName);
   return plist.parse(fs.readFileSync(path, 'utf8'));
 }
